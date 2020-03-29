@@ -1,0 +1,31 @@
+Before implementing and running the codes of this repository,You should follow these procedures step-by-step.
+*******************************************STEPS FOR CONFIGURING YOU RASPBERRY PI(3/3B+/4)  ***********************************
+Install Raspbian buster lite on your raspberry pi.You can download the raspbian buster lite by visiting the link below:
+[download raspbian page]: https://www.raspberrypi.org/downloads/raspbian/    -   Select raspbian buster lite from this download page and extract the zip file in any folder.
+Now you need to burn your memory card (should be atleast 8 GB) with the raspbian buster lite.For this 
+win32 disk imager is recommended.If you are using a linux system then you need to make the memory card bootable by burning 
+the raspbian buster lite using rufus (some linux distros have the utility to make memory card/pen drive bootable).
+
+Now plug in the memory card in the memory card slot(in the back) of your raspberry pi and then power it on(you'll need
+Type C connector for raspberry pi4).Connect the peripherals.
+If you are using only the headless raspberry pi then you need to connect it using ssh (though I have not tried).I have 
+connected 7-inch raspiscreen through HDMI cable(you will need microHDMI cable for raspberry pi4).
+
+After powering it on you will see the pi booting up and finally terminal login will show up.Type "pi" (without "") for the username
+and "raspberry" (without "") for the password (default username and password of raspberry pi).
+
+Connect it with the internet.(Raspberry pi has inbuilt wifi;Type `sudo raspi-config` in terminal then go to `Network Options` -> `Wi-fi`).
+Configure your wifi there by typing the ssid and password.You can also directly connect you internet connected mobile phone to usb 
+ port of pi via USB TETHERING.
+ 
+ Now ping in to check whether internet is connected(Type `ping google.com` in terminal).Type `sudo apt-get update && sudo apt-get upgrade` 
+ to update the repository list and update the obsolete packages to latest one.
+ 
+ For upgrading the current terminal to gui type `sudo apt-get install raspberrpi-ui-mods` in the terminal.After completion,type
+ `sudo raspi-config` then select `Boot Options` -> `Desktop/CLI` ->`Desktop Autologin`.Then reboot.
+ ********************************************************************************************************************************
+********************A SMALL HACK*****************
+Those guys who are from college then generally a captive-portal opens for login before connecting to internet.
+So,they can try the LYNX cli-browser by typing `sudo apt-get install lynx` in the terminal and then running the lynx by entering 
+`lynx` in the browser.Type IP address of captive portal there and then login.(I was mesmerised trying the cli-browser and its working.)
+*************************************************
