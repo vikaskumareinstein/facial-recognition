@@ -1,0 +1,6 @@
+
+As it is apparent that we have to install opencv along-with some image/video manipulation libraries.
+For installing opencv:
+
+we will install some of the dependencies required as:
+`sudo apt-get install libhdf5-dev libhdf5-serial-dev libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5 libatlas-base-dev libjasper-dev`
