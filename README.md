@@ -10,6 +10,7 @@ Implementation video of face-detection and recognition = https://youtu.be/Rh830m
 **********************************************************************
 For the initial setup of raspberry pi(3/3B+/4) read the `prerequisites.txt` and then install the dependency as written in `dependencies.txt`.After installing all the dependencies run the terminal and put your compressed image(whatsapp compression works better->70-100KB images) in the dataset folder with you name as the name of the folder.
 
+** git clone the repository in any folder,unzip it and then navigate to `/facial-recognition/`
 Now run these in your terminal:
   for training on your image-`python3 encode_faces.py --dataset dataset --encodings encodings.pickle --detection-method hog` using hog detection method.
   for running the script and detecting your image in live video stream -`python3 pi_face_recognition.py --cascade haarcascade_frontalface_default.xml --encodings encodings.pickle`
