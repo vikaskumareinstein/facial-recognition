@@ -1,6 +1,33 @@
 
-As it is apparent that we have to install opencv along-with some image/video manipulation libraries.
-For installing opencv:
 
+python3 will be preavailable in the raspbian buster lite.In order to install the packages from piwheels we have to install pip3,
+which can be installed as:
+`sudo apt-get install python3-pip`.
+As it is apparent that we have to install opencv along-with some image/video manipulation libraries.
+*********************************************************************************************************************************
+FOR INSTALLING OPENCV:
+***********************
 we will install some of the dependencies required as:
 `sudo apt-get install libhdf5-dev libhdf5-serial-dev libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5 libatlas-base-dev libjasper-dev`
+now run = `sudo pip3 install opencv-contrib-python` and `sudo pip3 install opencv`.After installing opencv run the python3 interpreter and try importing opencv i.e `import cv2`.
+If `ImportError: libImath-2_2.so.23: cannot open shared object file: No such file or directory` error occurs then some dependencies 
+are still missing.So,run `sudo apt-get install libilmbase-dev libopenexr-dev libgstreamer1.0-dev` in the terminal .
+Again try importing the cv2;if error like `undefined symbol: __atomic_fetch_add_8` happens then we have to add these lines to the 
+.bashrc file,so run `sudo nano ~/.bashrc` and add line `export LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libatomic.so.1` at the end
+of the .bashrc file and then source it by `source .bashrc`.
+(issue can be found here= https://github.com/piwheels/packages/issues/59).
+*********************************************************************************************************************************
+FOR INSTALLING DLIB   ---<creator=Davis King>
+*********************
+Type `sudo pip3 install dlib` in the terminal.    (dont forget to put sudo.)
+*********************************************************************************************************************************
+FOR INSTALLING FACE-RECOGNITION    ---<creator=Adam Geitgey>
+*******************************
+Type `sudo pip3 install face_recognition` in the terminal.    (error may occur if you don't use sudo).
+********************************************************************************************************************************
+FOR INSTALLING IMUTILS     ---<creator=Adrian Rosebrock>
+***********************
+Type `sudo pip3 install imutils` in the terminal.
+
+
+Now your raspberry pi is ready to run the face-recognition.
